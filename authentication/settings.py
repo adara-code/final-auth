@@ -2,6 +2,8 @@ from pathlib import Path
 from decouple import config
 from datetime import timedelta
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -71,11 +73,11 @@ WSGI_APPLICATION = 'authentication.wsgi.application'
 DATABASES = {
         'default': {
             "ENGINE": "django.db.backends.postgresql_psycopg2",
-            "HOST": config('SUPERBASE_HOST'),
-            "NAME": config('SUPERBASE_NAME'),
-            "USER": config('SUPERBASE_USER'),
-            "PASSWORD": config('SUPERBASE_PASSWORD'),
-            "PORT": config('SUPERBASE_PORT')
+            "HOST": str(os.get('SUPERBASE_HOST')),
+            "NAME": str(os.get('SUPERBASE_NAME')),
+            "USER": str(os.get('SUPERBASE_USER')),
+            "PASSWORD": str(os.get('SUPERBASE_PASSWORD')),
+            "PORT": str(os.get('SUPERBASE_PORT'))
         }
     }
 
