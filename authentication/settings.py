@@ -73,11 +73,11 @@ WSGI_APPLICATION = 'authentication.wsgi.application'
 DATABASES = {
         'default': {
             "ENGINE": "django.db.backends.postgresql_psycopg2",
-            "HOST": str(os.get('SUPERBASE_HOST')),
-            "NAME": str(os.get('SUPERBASE_NAME')),
-            "USER": str(os.get('SUPERBASE_USER')),
-            "PASSWORD": str(os.get('SUPERBASE_PASSWORD')),
-            "PORT": str(os.get('SUPERBASE_PORT'))
+            "HOST": config('SUPERBASE_HOST'),
+            "NAME": config('SUPERBASE_NAME'),
+            "USER": config('SUPERBASE_USER'),
+            "PASSWORD": config('SUPERBASE_PASSWORD'),
+            "PORT": config('SUPERBASE_PORT')
         }
     }
 
