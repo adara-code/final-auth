@@ -1,0 +1,10 @@
+.env
+*.log
+*.pot
+*.pyc
+__pycache__
+*.sqlite3
+media
+bin/
+lib/
+notes.txt
