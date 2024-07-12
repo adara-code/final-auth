@@ -187,7 +187,7 @@ def retrieve_organisation_by_id(request, orgId, format=None):
             "status": "success",
                 "message": "<message>",
             "data": {
-                    "orgId": org_by_id.orgId,
+                    "orgId":str(org_by_id.orgId),
                     "name": org_by_id.name,
                     "description": org_by_id.description,
             }
